@@ -1,19 +1,18 @@
 bazalt-thumbs
 =============
-server {
-        listen 80;
-        server_name ~^(?P<domain>.+)$;
 
-        index index.php;
+Nginx:
+```
+location /static/ {
+    root /www/public;
 
-        # http://whomwah.com/2010/07/05/fixing-the-trailing-slash-in-nginx/
-        server_name_in_redirect off;
-
-        root /var/www/sites/davintoo.com/www/public;
-
-        location /static/ {
-            root /var/www/sites/davintoo.com/www/public;
-
-            try_files $uri /index.php?file=$uri;
-        }
+    try_files $uri /index.php?file=$uri;
 }
+```
+
+Apache:
+```
+RewriteCond %{REQUEST_URI} ^(/static/)
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ thumb.php?file=$1 [L]
+```
