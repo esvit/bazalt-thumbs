@@ -7,7 +7,7 @@ class Operations
     /**
      * Resize image
      */
-    public function size(\Imagine\Gd\Image $image, $options, $allOptions)
+    public function size(\Imagine\Image\ImageInterface $image, $options, $allOptions)
     {
         $mode = \Imagine\Image\ImageInterface::THUMBNAIL_INSET;
 

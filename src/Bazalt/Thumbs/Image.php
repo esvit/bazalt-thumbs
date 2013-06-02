@@ -53,7 +53,7 @@ class Image
         if (!is_file($staticFile)) {
             file_put_contents($staticFile . self::CONFIGURATION_FILE_EXTENSION, $serializeOptions);
         }
-        return self::$staticUrl . self::_relativePath($staticFile);
+        return sprintf(self::$staticUrl, $key{0}) . self::_relativePath($staticFile);
     }
 
     /**

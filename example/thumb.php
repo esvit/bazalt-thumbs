@@ -9,7 +9,7 @@ if (!isset($_GET['file'])) {
 
 class Operations extends \Bazalt\Thumbs\Operations
 {
-    public function watermark(\Imagine\Gd\Image $image, $options, $allOptions)
+    public function watermark(\Imagine\Image\ImageInterface $image, $options, $allOptions)
     {
         $imagine = new \Imagine\Gd\Imagine();
         $wm = $imagine->open(__DIR__ . '/images/watermark.png');
@@ -28,6 +28,20 @@ class Operations extends \Bazalt\Thumbs\Operations
 
         $point = new \Imagine\Image\Point($x, $y);
         return $image->paste($wm, $point);
+    }
+
+    public function grayscale(\Imagine\Image\ImageInterface $image, $options, $allOptions)
+    {
+        $image->effects()->grayscale();
+        return $image;
+    }
+
+    public function sepia(\Imagine\Image\ImageInterface $image, $options, $allOptions)
+    {
+        $image->effects()
+              ->grayscale()
+              ->colorize(new \Imagine\Image\Color('#643200'));
+        return $image;
     }
 }
 
