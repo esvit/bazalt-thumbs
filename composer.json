@@ -1,0 +1,17 @@
+{
+    "name": "Bazalt/Thumbs",
+    "license": "New BSD License",
+    "authors": [
+        {
+            "name": "Vitalii Savchuk",
+            "email": "esvit666@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {"Bazalt": "src"}
+    },
+    "require": {
+        "twig/twig": "*",
+        "imagine/imagine": "*"
+    }
+}
