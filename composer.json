@@ -8,7 +8,7 @@
         }
     ],
     "autoload": {
-        "psr-0": {"Bazalt\Thumbs": "src"}
+        "psr-0": {"Bazalt\\Thumbs": "src"}
     },
     "require": {
         "php": ">=5.4.0",
