@@ -1,6 +1,20 @@
 bazalt-thumbs
 =============
 
+## Install via composer
+```
+php composer require bazalt/thumbs
+```
+Or just add this config to your composer.json
+```
+{
+    "require": {
+        "bazalt/thumbs": "dev-master"
+    }
+}
+
+```
+
 Nginx:
 ```
 location /static/ {
