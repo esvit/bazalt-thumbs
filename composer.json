@@ -1,5 +1,5 @@
 {
-    "name": "Bazalt/Thumbs",
+    "name": "bazalt/thumbs",
     "license": "New BSD License",
     "authors": [
         {
@@ -8,9 +8,10 @@
         }
     ],
     "autoload": {
-        "psr-0": {"Bazalt": "src"}
+        "psr-0": {"Bazalt/Thumbs": "src"}
     },
     "require": {
+        "php": ">=5.4.0",
         "twig/twig": "*",
         "imagine/imagine": "*"
     }
