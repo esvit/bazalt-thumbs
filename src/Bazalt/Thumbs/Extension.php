@@ -2,6 +2,8 @@
 
 namespace Bazalt\Thumbs;
 
+require_once __DIR__ . '/helpers/thumb.php';
+
 class Extension extends \Twig_Extension
 {
     public function getName()

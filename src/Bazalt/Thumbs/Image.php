@@ -24,13 +24,6 @@ class Image
         if (!is_file($image) || !is_readable($image)) {
             throw new \Exception(sprintf('Invalid file "%s"', $image));
         }
-        // catch exception if invalid image
-        try {
-            $imagine = new \Imagine\Gd\Imagine();
-            $imagine->open($image);
-        } catch (\Imagine\Exception\InvalidArgumentException $e) {
-            throw new \Exception(sprintf('Invalid image "%s"', $image));
-        }
 
         // check size
         list($width, $height) = explode('x', $size);
