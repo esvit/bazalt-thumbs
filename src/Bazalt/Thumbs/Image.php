@@ -12,14 +12,18 @@ class Image
 
     protected static $staticUrl = null;
 
-    public static function initStorage($staticFolder, $staticUrl)
+    protected static $rootDir = null;
+
+    public static function initStorage($staticFolder, $staticUrl, $rootDir = '')
     {
         self::$staticFolder = $staticFolder;
         self::$staticUrl = $staticUrl;
+        self::$rootDir = $rootDir;
     }
 
     public static function getThumb($image, $size, $options = [])
     {
+        $image = self::$rootDir . $image;
         // check image
         if (!is_file($image) || !is_readable($image)) {
             throw new \Exception(sprintf('Invalid file "%s"', $image));
