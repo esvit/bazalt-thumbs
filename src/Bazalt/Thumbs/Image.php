@@ -112,7 +112,7 @@ class Image
         if (!is_dir($path) && !mkdir($path, 0777, true)) {
             throw new \Exception('Cant create folder "' . $path . '"');
         }
-        return $path . $fileKey . '.' . $ext;
+        return $path . $fileKey . '.' . strToLower($ext);
     }
 
     private static function _relativePath($path)
