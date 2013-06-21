@@ -4,6 +4,16 @@ namespace Bazalt\Thumbs;
 
 class Operations
 {
+    protected $originalImage = null;
+
+    public function originalImage($image = null)
+    {
+        if ($image != null) {
+            $this->originalImage = $image;
+        }
+        return $this->originalImage;
+    }
+
     /**
      * Resize image
      */
