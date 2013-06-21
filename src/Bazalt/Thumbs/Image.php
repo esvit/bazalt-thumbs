@@ -87,6 +87,7 @@ class Image
         } catch (\Imagine\Exception\InvalidArgumentException $e) {
             return false;
         }
+        $operations->originalImage($image);
         // do operations with image
         foreach ($config as $operation => $options) {
             if (method_exists($operations, $operation)) {
