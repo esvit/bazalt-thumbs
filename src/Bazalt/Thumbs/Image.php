@@ -21,7 +21,7 @@ class Image
         self::$rootDir = $rootDir;
     }
 
-    public static function getThumb($image, $size, $options = [])
+    public static function getThumb($image, $size, $options = array())
     {
         $image = self::$rootDir . $image;
         // check image
@@ -34,13 +34,13 @@ class Image
         if (!is_numeric($width) || !is_numeric($height)) {
             throw new \Exception(sprintf('Invalid size "%s"', $size));
         }
-        $options = array_merge([
+        $options = array_merge(array(
             'image' => $image,
-            'size' => [
+            'size' => array(
                 'width' => $width,
                 'height' => $height
-            ]
-        ], $options);
+            )
+        ), $options);
 
         $serializeOptions = serialize($options);
         $key = md5($serializeOptions);
