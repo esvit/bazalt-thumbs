@@ -56,7 +56,7 @@ class Image
     /**
      * Generate thumbnail by configuration file
      */
-    public static function generateThumb($file, Operations $operations)
+    public static function generateThumb($file, Operations $operations, $config = array('format' => 'jpg', 'quality' => 90))
     {
         // antihacker
         if (substr_count($file, '../') != false) {
@@ -94,7 +94,7 @@ class Image
                 $image = $operations->$operation($image, $options, $config);
             }
         }
-        $image->save($file);
+        $image->save($file, $config);
         return $file;
     }
 
