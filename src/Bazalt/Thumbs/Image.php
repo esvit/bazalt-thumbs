@@ -103,7 +103,7 @@ class Image
      */
     private static function _getFilename($file, $fileKey)
     {
-        $ext = 'jpg';// pathinfo($file, PATHINFO_EXTENSION);
+        $ext = pathinfo($file, PATHINFO_EXTENSION);
         $folder = self::$staticFolder;
 
         $path  = rtrim($folder, DIRECTORY_SEPARATOR)  . DIRECTORY_SEPARATOR;
