@@ -110,7 +110,7 @@ class Image
         $path .= $fileKey{0} . $fileKey{1} . DIRECTORY_SEPARATOR;
         $path .= $fileKey{2} . $fileKey{3} . DIRECTORY_SEPARATOR;
 
-        if (!is_dir($path) && !mkdir($path, 0777, true)) {
+        if (!is_dir($path) && !@mkdir($path, 0777, true)) {
             throw new \Exception('Cant create folder "' . $path . '"');
         }
         return $path . $fileKey . '.' . strToLower($ext);
